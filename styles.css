@@ -1,0 +1,431 @@
+/* Variables CSS - Thème sombre par défaut */
+:root {
+  --bg: #0b0d10;                    /* Couleur de fond principale (bleu très foncé) */
+  --bg-elev: #12151a;               /* Couleur de fond pour les éléments surélevés */
+  --text: #e6e9ef;                  /* Couleur du texte principal (blanc cassé) */
+  --muted: #9aa4b2;                 /* Couleur du texte secondaire (gris) */
+  --primary: #6ea8fe;               /* Couleur primaire (bleu) */
+  --primary-600: #4d87f0;           /* Variante plus foncée de la couleur primaire */
+  --card: #111419;                  /* Couleur de fond des cartes */
+  --border: #20242c;                /* Couleur des bordures */
+  --success: #2dc071;               /* Couleur de succès (vert) */
+  --danger: #ff6b6b;                /* Couleur de danger (rouge) */
+  --shadow: 0 10px 30px rgba(0,0,0,.35); /* Ombre par défaut */
+}
+
+/* Variables CSS - Thème clair */
+[data-theme="light"] {
+  --bg: #f7f9fc;                    /* Fond clair pour le thème lumineux */
+  --bg-elev: #ffffff;               /* Fond blanc pour les éléments surélevés */
+  --text: #101419;                  /* Texte sombre pour le thème clair */
+  --muted: #5f6b7a;                 /* Texte secondaire gris foncé */
+  --primary: #3b82f6;               /* Bleu primaire pour le thème clair */
+  --primary-600: #2563eb;           /* Bleu primaire plus foncé */
+  --card: #ffffff;                  /* Cartes blanches */
+  --border: #e5e7eb;                /* Bordures grises claires */
+  --shadow: 0 8px 24px rgba(16,20,25,.08); /* Ombre plus subtile pour le thème clair */
+}
+
+/* Reset et base */
+* { box-sizing: border-box; }       /* Inclut padding et border dans la largeur/hauteur */
+html { scroll-behavior: smooth; }   /* Défilement fluide entre les sections */
+
+body {
+  margin: 0;                        /* Supprime les marges par défaut */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; /* Police avec fallbacks */
+  color: var(--text);               /* Utilise la variable de couleur de texte */
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(62,108,255,.08), transparent),
+              radial-gradient(1200px 600px at 110% 10%, rgba(62,108,255,.05), transparent),
+              var(--bg);            /* Dégradé radial avec deux cercles bleus transparents */
+  line-height: 1.6;                 /* Espacement entre les lignes */
+}
+
+img { max-width: 100%; display: block; } /* Images responsives et en bloc */
+a { color: inherit; text-decoration: none; } /* Liens héritent de la couleur et sans soulignement */
+
+/* Container principal */
+.container {
+  width: min(1100px, 92%);          /* Largeur maximale de 1100px ou 92% de l'écran */
+  margin: 0 auto;                   /* Centrage horizontal */
+}
+
+/* Header */
+.site-header {
+  position: sticky;                 /* Header qui reste en haut lors du scroll */
+  top: 0;                          /* Position en haut de l'écran */
+  backdrop-filter: saturate(140%) blur(8px); /* Effet de flou et saturation */
+  z-index: 1000;                   /* Au-dessus des autres éléments */
+  background: color-mix(in oklab, var(--bg-elev) 86%, transparent); /* Fond semi-transparent */
+  border-bottom: 1px solid var(--border); /* Bordure en bas */
+}
+.header-inner {
+  display: flex;                    /* Layout flexbox */
+  align-items: center;              /* Alignement vertical centré */
+  justify-content: space-between;   /* Espacement entre les éléments */
+  padding: 12px 0;                 /* Padding vertical */
+}
+
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; } /* Logo et nom avec espacement */
+
+.brand__logo {
+  width: 36px; height: 36px;        /* Taille du logo */
+  border-radius: 10px;              /* Coins arrondis */
+  display: grid; place-items: center; /* Centrage du contenu */
+  background: linear-gradient(135deg, var(--primary), var(--primary-600)); /* Dégradé diagonal */
+  color: white; font-weight: 800;   /* Texte blanc et gras */
+}
+
+.brand__text { letter-spacing: .3px; } /* Espacement entre les lettres */
+
+.nav { display: flex; align-items: center; gap: 18px; } /* Navigation avec espacement */
+
+.nav__toggle { display: none; background: none; border: 0; cursor: pointer; } /* Bouton menu mobile (caché par défaut) */
+
+.nav__bar { 
+  width: 22px; height: 2px;         /* Taille des barres du menu hamburger */
+  background: var(--text);          /* Couleur des barres */
+  display: block; margin: 5px 0;    /* Affichage en bloc avec marges */
+  border-radius: 2px;               /* Coins légèrement arrondis */
+}
+
+.nav__menu { 
+  display: flex; gap: 18px;         /* Menu horizontal avec espacement */
+  list-style: none;                 /* Supprime les puces */
+  padding: 0; margin: 0;            /* Supprime padding et marges */
+}
+
+.nav__menu a { color: var(--muted); font-weight: 500; } /* Liens du menu en couleur secondaire */
+.nav__menu a:hover { color: var(--text); } /* Couleur au survol */
+
+.theme-toggle { 
+  border: 1px solid var(--border);  /* Bordure */
+  background: var(--bg-elev);       /* Fond surélevé */
+  color: var(--text);               /* Couleur du texte */
+  border-radius: 10px;              /* Coins arrondis */
+  padding: 8px 10px;                /* Espacement interne */
+  cursor: pointer;                  /* Curseur pointer */
+  box-shadow: var(--shadow);        /* Ombre */
+}
+
+
+/* Section Hero */
+.hero { padding: 64px 0 24px; }     /* Espacement vertical de la section hero */
+
+.hero__inner { 
+  display: grid;                    /* Layout en grille */
+  grid-template-columns: 1.1fr .9fr; /* Deux colonnes (60% / 40%) */
+  gap: 40px;                        /* Espacement entre les colonnes */
+  align-items: center;              /* Alignement vertical centré */
+}
+
+.hero__content h1 { 
+  margin: 0 0 6px;                  /* Marges du titre principal */
+  font-size: clamp(28px, 4vw, 44px); /* Taille responsive (min 28px, max 44px) */
+}
+
+.hero__role { 
+  margin: 0 0 12px;                 /* Marges du rôle */
+  color: var(--muted);              /* Couleur secondaire */
+  font-weight: 500;                 /* Poids de police moyen */
+}
+
+.hero__bio { 
+  margin: 0 0 18px;                 /* Marges de la biographie */
+  max-width: 60ch;                  /* Largeur maximale en caractères */
+}
+
+.hero__actions { 
+  display: flex; gap: 12px;         /* Boutons d'action en ligne */
+  margin: 18px 0;                   /* Marges */
+}
+
+.hero__meta { 
+  list-style: none;                 /* Supprime les puces */
+  padding: 0; margin: 12px 0 0;     /* Supprime padding, ajoute marge en haut */
+  display: flex; flex-wrap: wrap;   /* Layout flex avec retour à la ligne */
+  gap: 16px;                        /* Espacement entre les éléments */
+  color: var(--muted);              /* Couleur secondaire */
+}
+
+.hero__photo img { 
+  border-radius: 16px;              /* Coins arrondis */
+  box-shadow: var(--shadow);        /* Ombre */
+  border: 1px solid var(--border);  /* Bordure */
+}
+
+/* Boutons */
+.btn { 
+  display: inline-flex;             /* Bouton en flex inline */
+  align-items: center;              /* Alignement vertical centré */
+  justify-content: center;          /* Alignement horizontal centré */
+  gap: 8px;                         /* Espacement entre icône et texte */
+  padding: 10px 14px;               /* Espacement interne */
+  border-radius: 12px;              /* Coins arrondis */
+  border: 1px solid var(--border);  /* Bordure */
+  background: var(--bg-elev);       /* Fond surélevé */
+  color: var(--text);               /* Couleur du texte */
+  font-weight: 600;                 /* Texte semi-gras */
+}
+
+.btn:hover { 
+  border-color: color-mix(in oklab, var(--primary) 60%, var(--border)); /* Bordure colorée au survol */
+}
+
+.btn--primary { 
+  background: linear-gradient(135deg, var(--primary), var(--primary-600)); /* Dégradé pour bouton primaire */
+  border-color: transparent;        /* Bordure transparente */
+  color: white;                     /* Texte blanc */
+}
+
+.btn--primary:hover { 
+  filter: saturate(1.05);           /* Augmente la saturation au survol */
+}
+
+.btn--sm { 
+  padding: 8px 10px;                /* Padding plus petit */
+  border-radius: 10px;              /* Coins moins arrondis */
+  font-size: 14px;                  /* Taille de police plus petite */
+}
+
+/* Sections */
+.section { padding: 56px 0; }       /* Espacement vertical des sections */
+
+.section--alt { 
+  background: color-mix(in oklab, var(--bg-elev) 92%, transparent); /* Fond alternatif semi-transparent */
+  border-top: 1px solid var(--border);    /* Bordure en haut */
+  border-bottom: 1px solid var(--border); /* Bordure en bas */
+}
+
+.section h2 { 
+  margin: 0 0 20px;                 /* Marges des titres de section */
+  font-size: clamp(22px, 2.8vw, 28px); /* Taille responsive */
+}
+
+/* Cartes */
+.card { 
+  background: var(--card);          /* Fond des cartes */
+  border: 1px solid var(--border);  /* Bordure */
+  border-radius: 16px;              /* Coins arrondis */
+  box-shadow: var(--shadow);        /* Ombre */
+  padding: 18px;                    /* Espacement interne */
+}
+
+.card__header { 
+  display: flex;                    /* Layout flex */
+  align-items: center;              /* Alignement vertical centré */
+  justify-content: space-between;   /* Espacement entre les éléments */
+  gap: 12px;                        /* Espacement */
+}
+
+.card__subtitle { 
+  margin: 6px 0 10px;               /* Marges du sous-titre */
+  color: var(--muted);              /* Couleur secondaire */
+}
+
+.card__body { padding-top: 8px; }   /* Espacement en haut du corps de carte */
+
+.badge { 
+  background: color-mix(in oklab, var(--primary) 25%, var(--bg)); /* Fond avec mélange de couleurs */
+  color: var(--text);               /* Couleur du texte */
+  border: 1px solid color-mix(in oklab, var(--primary) 50%, var(--border)); /* Bordure colorée */
+  border-radius: 999px;             /* Forme de pilule */
+  padding: 6px 10px;                /* Espacement interne */
+  font-size: 12px;                  /* Petite taille de police */
+}
+
+/* Listes et Tags */
+.list { 
+  margin: 0;                        /* Supprime les marges */
+  padding-left: 18px;               /* Indentation à gauche */
+}
+
+.tags { 
+  list-style: none;                 /* Supprime les puces */
+  padding: 0; margin: 14px 0 0;     /* Supprime padding, ajoute marge en haut */
+  display: flex; flex-wrap: wrap;   /* Layout flex avec retour à la ligne */
+  gap: 8px;                         /* Espacement entre les tags */
+}
+
+.tags li { 
+  padding: 6px 10px;                /* Espacement interne */
+  border-radius: 999px;             /* Forme de pilule */
+  border: 1px solid var(--border);  /* Bordure */
+  background: var(--bg-elev);       /* Fond surélevé */
+  color: var(--muted);              /* Couleur secondaire */
+  font-size: 13px;                  /* Petite taille de police */
+}
+
+/* Grilles */
+.grid { 
+  display: grid;                    /* Layout en grille */
+  gap: 18px;                        /* Espacement entre les éléments */
+}
+
+.projects { 
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales pour les projets */
+}
+
+.skills { 
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales pour les compétences */
+}
+
+/* Timeline */
+.timeline { 
+  display: grid;                    /* Layout en grille */
+  gap: 16px;                        /* Espacement entre les éléments */
+}
+
+.timeline__item { 
+  position: relative;               /* Position relative pour les pseudo-éléments */
+}
+
+.timeline__item::before { 
+  content: "";                      /* Pseudo-élément vide */
+  position: absolute;               /* Position absolue */
+  left: -12px; top: 22px;          /* Position à gauche et centré verticalement */
+  width: 6px; height: 6px;          /* Taille du point */
+  background: var(--primary);       /* Couleur primaire */
+  border-radius: 50%;               /* Forme circulaire */
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 15%, transparent); /* Ombre colorée */
+}
+
+/* Projets */
+.project__cover { 
+  border-radius: 12px;              /* Coins arrondis */
+  border: 1px solid var(--border);  /* Bordure */
+  aspect-ratio: 16/9;               /* Ratio d'aspect 16:9 */
+  object-fit: cover;                /* Image couvre toute la zone */
+}
+
+.project__links { 
+  display: flex; gap: 10px;         /* Liens en ligne avec espacement */
+  margin-top: 10px;                 /* Marge en haut */
+}
+
+/* Formulaires */
+.contact-form { padding: 20px; }    /* Espacement interne du formulaire */
+
+.form-grid { 
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+}
+
+.form-grid__full { 
+  grid-column: 1 / -1;              /* Prend toute la largeur de la grille */
+}
+
+.form__actions { 
+  display: flex;                    /* Layout flex */
+  align-items: center;              /* Alignement vertical centré */
+  gap: 14px;                        /* Espacement */
+  margin-top: 12px;                 /* Marge en haut */
+}
+
+.form__hint { 
+  color: var(--muted);              /* Couleur secondaire */
+  min-height: 1.2em;                /* Hauteur minimale */
+}
+
+/* Footer */
+.site-footer { 
+  padding: 28px 0;                  /* Espacement vertical */
+  border-top: 1px solid var(--border); /* Bordure en haut */
+}
+
+.footer-inner { 
+  display: flex;                    /* Layout flex */
+  align-items: center;              /* Alignement vertical centré */
+  justify-content: space-between;   /* Espacement entre les éléments */
+}
+
+/* Loader */
+.loader { 
+  position: fixed;                  /* Position fixe sur l'écran */
+  inset: 0;                         /* Prend tout l'écran */
+  z-index: 2000;                    /* Au-dessus de tout */
+  display: grid; place-items: center; /* Centrage */
+  background: var(--bg);            /* Fond */
+  color: var(--primary);            /* Couleur primaire */
+  transition: opacity .5s ease, visibility .5s ease; /* Transitions */
+}
+
+.loader.is-done { 
+  opacity: 0;                       /* Transparent */
+  visibility: hidden;               /* Caché */
+}
+
+.loader__svg { 
+  width: min(80vw, 800px);          /* Largeur responsive */
+  height: auto;                     /* Hauteur automatique */
+}
+
+.loader__water { 
+  fill: currentColor;                /* Remplissage avec la couleur actuelle */
+  transform: translateY(100%);      /* Décalé vers le bas */
+  transform-origin: 50% 100%;       /* Point d'origine de la transformation */
+  animation: fillUp 1.8s ease-out forwards; /* Animation de remplissage */
+}
+
+@keyframes fillUp {
+  from { transform: translateY(100%); } /* Départ : décalé vers le bas */
+  to { transform: translateY(0%); }     /* Arrivée : position normale */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__water { animation: none; transform: translateY(0); } /* Désactive l'animation si l'utilisateur préfère */
+  .loader { transition: none; }     /* Supprime les transitions */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; } /* Une seule colonne pour le hero */
+  .projects { grid-template-columns: repeat(2, 1fr); } /* 2 colonnes pour les projets */
+  .skills { grid-template-columns: repeat(2, 1fr); } /* 2 colonnes pour les compétences */
+}
+
+@media (max-width: 680px) {
+  .nav__toggle { display: inline-block; } /* Affiche le bouton menu mobile */
+  .nav__menu { 
+    position: absolute;             /* Position absolue */
+    right: 16px; top: 60px;        /* Position en haut à droite */
+    background: var(--bg-elev);     /* Fond surélevé */
+    border: 1px solid var(--border); /* Bordure */
+    border-radius: 12px;            /* Coins arrondis */
+    box-shadow: var(--shadow);      /* Ombre */
+    padding: 10px;                  /* Espacement interne */
+    flex-direction: column;         /* Direction verticale */
+    gap: 10px;                      /* Espacement */
+    display: none;                  /* Caché par défaut */
+  }
+  .nav__menu.is-open { display: flex; } /* Affiché quand ouvert */
+  .projects { grid-template-columns: 1fr; } /* Une colonne pour les projets */
+  .skills { grid-template-columns: 1fr; } /* Une colonne pour les compétences */
+  .form-grid { grid-template-columns: 1fr; } /* Une colonne pour le formulaire */
+}
+
+/* Styles d'impression - Masquer les éléments UI */
+@media print {
+  .theme-toggle,
+  .site-header,
+  .site-footer,
+  .nav,
+  .loader {
+    display: none !important;       /* Cache les éléments UI lors de l'impression */
+  }
+  
+  body {
+    background: white;              /* Fond blanc pour l'impression */
+    color: black;                   /* Texte noir pour l'impression */
+  }
+  
+  .section {
+    page-break-inside: avoid;       /* Évite de couper les sections */
+  }
+}
+
+
+
+
+
+#contact{
+
+}

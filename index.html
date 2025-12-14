@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV Moderne – Manon Viloda‑Rivière</title>
+    <meta name="description" content="CV moderne, fluide et responsive." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loader" class="loader" aria-hidden="true">
+      <svg class="loader__svg" viewBox="0 0 800 240" role="img" aria-label="Chargement MANON">
+        <defs>
+          <mask id="text-mask" x="0" y="0" width="100%" height="100%">
+            <rect x="0" y="0" width="100%" height="100%" fill="black" />
+            <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial" font-size="140" font-weight="800" fill="white" letter-spacing="8">
+              MANON
+            </text>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="none" />
+        <!-- Visible outline for the text -->
+        <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial" font-size="140" font-weight="800" fill="none" stroke="currentColor" stroke-opacity="0.18" stroke-width="2" letter-spacing="8">
+          MANON
+        </text>
+        <!-- Water rectangle masked by the text -->
+        <rect class="loader__water" x="0" y="0" width="100%" height="100%" mask="url(#text-mask)" />
+      </svg>
+    </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Accueil">
+          <span class="brand__logo" aria-hidden="true">MV</span>
+          <span class="brand__text">Manon Viloda‑Rivière</span>
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+          <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+          </button>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="#about">Profil</a></li>
+            <li><a href="#experience">Expériences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+              <li><a href="#interet">Centre d'intêrets</a></li>
+            <li><a href="#education">Formation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+            <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id ="top">
+      <section class="hero" id="about">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1>Manon Viloda‑Rivière</h1>
+            <p class="hero__role">Stagiaire en développement</p>
+            <p class="hero__bio">
+              Étudiante en BUT Informatique à Villeneuve d’Ascq, dynamique et motivée pour un stage de 2e année
+              d’avril à juin 2026 dans le développement informatique.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#contact">Me contacter</a>
+              <a class="btn" href="#projects">Voir mes projets</a>
+              <a class="btn" href="./img/CVManonVilodaRiviere.pdf" target="_blank" aria-label="Voir le CV en PDF">Mon CV en PDF</a>
+            </div>
+          </div>
+          <div class="hero__photo" aria-hidden="true">
+            <img src="./img/moi.jpg" alt="Photo de profil" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <h2 id="experience-title">Expériences</h2>
+          <div class="timeline">
+              <article class="card timeline__item">
+                  <header class="card__header">
+                      <h3>Stage Girl Can Code</h3>
+                      <span class="badge">2025</span>
+                  </header>
+                  <ul class="list">
+                      <li>Animation d'un stage pour l'insertion des femmes dans les métiers du numérqiue</li>
+                  </ul>
+              </article>
+              <article class="card timeline__item">
+                  <header class="card__header">
+                      <h3>Bénévolat auprès de personnes âgées</h3>
+                      <span class="badge">2024 — 2025</span>
+                  </header>
+                  <ul class="list">
+                      <li>Aide à l’insertion numérique des personnes âgées et isolées.</li>
+                  </ul>
+              </article>
+              <article class="card timeline__item">
+                  <header class="card__header">
+                      <h3>Association en Démarche Durable</h3>
+                      <span class="badge">2022 — 2023</span>
+                  </header>
+                  <ul class="list">
+                      <li>Aide à la création d’une association pour accompagner les établissements scolaires
+                          dans une démarche durable (principes environnementaux, sociaux et économiques).</li>
+                  </ul>
+              </article>
+            <article class="card timeline__item">
+              <header class="card__header">
+                <h3>Stagiaire — Service informatique, Webhelp</h3>
+                <span class="badge">1 semaine — 2022</span>
+              </header>
+              <p class="card__subtitle">Maintenance et support</p>
+              <ul class="list">
+                <li>Aide à la maintenance informatique des services de télécommunication.</li>
+              </ul>
+            </article>
+
+            <article class="card timeline__item">
+              <header class="card__header">
+                <h3>Stagiaire — Citymagine</h3>
+                <span class="badge">1 semaine — 2021</span>
+              </header>
+              <p class="card__subtitle">Correction d'une IA</p>
+              <ul class="list">
+                <li>Correction des erreurs de l’IA pour la détection des panneaux de signalisation et des marquage aux sols</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <h2 id="projects-title">Projets</h2>
+          <div class="grid projects">
+
+            <article class="card project">
+              <img class="project__cover" src="./img/ChessWithMe.png" alt="Jeux d'échecs" />
+              <div class="card__body">
+                <h3>Projet Agile - Jeux d'échec</h3>
+                <p>Jeux d'échecs sans interface graphique, appliquant les méthodes de l'agilité</p>
+                <a class="btn" href="https://github.com/manon-viloda-riviere/S3.01--Projet-Agile-" target="_blank" aria-label="Lien vers le code source">Lien vers le code source</a>
+              </div>
+            </article>
+            <article class="card project">
+              <img class="project__cover" src="./img/mazel.png" alt="Labyrinthe" />
+              <div class="card__body">
+                <h3>Labyritnhe - Jeux multimode </h3>
+                <p>Jeux de labyrinthe, 2 mode de jeux; un mode libre avec lui même plussieurs options comme "Adverssaire" , "Limited" où on ne peux pas voir à travers les murs, et le mode progressionavec plusieurs niveaux avec chacun 3 niveaux de difficultés</p>
+                <a class="btn" href="https://github.com/manon-viloda-riviere/S3.02-Labyrinthe" target="_blank" aria-label="Lien vers le code source">Lien vers le code source</a>
+              </div>
+            </article>
+              <article class="card project">
+                  <img class="project__cover" src="./img/CalendrierAvent.png" alt="Calendrier de l'avent" />
+                  <div class="card__body">
+                      <h3>Site web — Calendrier de l'avent </h3>
+                      <p>Site web simple sous la forme d'un calendrier de l'avent, pour faire ptienter les enfants avant les fêtes de noël</p>
+                      <a class="btn" href="https://github.com/manon-viloda-riviere/Calendrier-lAvent" target="_blank" aria-label="Lien vers le code source">Lien vers le code source</a>
+                  </div>
+              </article>
+              <article class="card project">
+                  <img class="project__cover" src="./img/JOParis.png" alt="BDD JO" />
+                  <div class="card__body">
+                      <h3> Base de donnée - JO 2024</h3>
+                      <p>Création d'une base de donné complexe pour la gestion d'un événement sportifs comme les JO de Paris 2024</p>
+                      <a class="btn" href="https://github.com/manon-viloda-riviere/S1.04-BDD-JO" target="_blank" aria-label="Lien vers le code source">Lien vers le code source</a>
+                  </div>
+              </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <h2 id="skills-title">Compétences</h2>
+          <div class="grid skills">
+            <div class="card">
+              <h3>Techniques</h3>
+              <ul class="tags">
+                <li>Java</li>
+                <li>Front-end</li>
+                  <li>PostgreSql</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Méthodologies & Gestion</h3>
+              <ul class="tags">
+                <li>Philosophie Agile</li>
+                <li>Gestion de projet</li>
+              </ul>
+            </div>
+              <div class="card">
+                  <h3>Soft-Skill</h3>
+                  <ul class="tags">
+                      <li>Travail d'équipe</li>
+                      <li>Autonome</li>
+                      <li>Organisée</li>
+                      <li>Communication</li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </section>
+        <section class="section" id="interet" aria-labelledby="skills-title">
+            <div class="container">
+                <h2>Centre d'intêret </h2>
+                <div class="grid skills">
+                    <div class="card">
+                        <h3>Lecture</h3>
+                        <ul class="tags">
+                            <li>Classique</li>
+                            <li>Thriller</li>
+                            <li>Polar</li>
+                            <li>Romance</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Activités Manuelles</h3>
+                        <ul class="tags">
+                            <li>Peinture</li>
+                            <li>Crochet / Tricot </li>
+                            <li>Bricolage</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Vielle technologique - Cloud Nord 2025  </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="container">
+          <h2 id="education-title">Formation</h2>
+          <div class="timeline">
+            <article class="card timeline__item">
+              <header class="card__header">
+                <h3>BUT Informatique</h3>
+                <span class="badge">2024 — à ce jour</span>
+              </header>
+              <p class="card__subtitle">Université de Lille</p>
+            </article>
+            <article class="card timeline__item">
+              <header class="card__header">
+                <h3>Bac STI2D option SIN — Mention Bien</h3>
+                <span class="badge">2024</span>
+              </header>
+              <p class="card__subtitle">Lycée Colbert</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title">Contact</h2>
+            <div class="grid skills">
+                <div class="card">
+                    <h3>Mails</h3>
+                    <h5>viloda.riviere.manon@gmail.com</h5>
+                </div>
+                <div class="card">
+                    <h3>Addresse</h3>
+                    <h5>Metropole Lilloise</h5>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Manon Viloda‑Rivière — Tous droits réservés</p>
+        <a class="btn btn--sm" href="#top">Haut de page</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
